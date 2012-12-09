@@ -61,6 +61,13 @@ object LocChecker {
       })
     })
 
+    ress.foreach(r => {
+      if (!locs.contains(r._1)) {
+        logger.warn("""Unused loc ID: "%s" (%s)""".format(r._1, r._2.mkString(", ")))
+        warns += 1
+      }
+    })
+
     val msg = "%d strings found. %d errors, %d warnings.".format(locs.size, errors, warns)
     if (0 != errors)
       sys.error("Errors were found. " + msg)
