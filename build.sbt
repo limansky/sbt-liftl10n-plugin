@@ -4,7 +4,7 @@ organization := "su.eterra"
 
 name := "sbt-liftl10n-plugin"
 
-version := "0.0.2-SNAPSHOT"
+version := "0.0.2"
 
 scalaVersion := "2.9.2"
 

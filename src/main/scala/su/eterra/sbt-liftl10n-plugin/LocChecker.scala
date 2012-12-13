@@ -34,7 +34,7 @@ object LocChecker {
       allLangs += it.file
     })
 
-    def fileList(list: Seq[LocItem]) = list.map(l => l.file + ":" + l.line).mkString(", ")
+    def fileList(list: Seq[LocItem]) = list.map(l => l.file + ":" + l.line).sorted.mkString(", ")
 
     var errors = 0
     var warns = 0
