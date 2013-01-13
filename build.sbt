@@ -8,7 +8,7 @@ version := "0.0.2"
 
 scalaVersion := "2.9.2"
 
-crossScalaVersions := (Seq("2.9.2", "2.9.1"))
+crossScalaVersions := (Seq("2.10.0", "2.9.2", "2.9.1"))
 
 licenses += ("BSD License", url("https://raw.github.com/limansky/sbt-liftl10n-plugin/master/LICENSE"))
 
