@@ -6,6 +6,9 @@ to check localization in the [Lift](http://www.liftweb.net) projects.  The plugi
 sources and html files for localization IDs, and check if the id is available in all translation 
 files.
 
+  This plugin is compatible with sbt 0.13 or later, however it's should not be a big problem to
+port it to the older sbt if it really needed.
+
   Currently the plugin is in early development stage, so the names of settings and other parameters
 can be changed.
 
@@ -15,9 +18,7 @@ Usage
 To use the plugin and following lines in the `project/plugins.scala`
 
 ```
-resolvers += "liftl10n repo" at "http://limansky.github.com/maven2"
-
-addSbtPlugin("su.eterra" % "sbt-liftl10n-plugin" % "0.0.1")
+addSbtPlugin("su.eterra" % "sbt-liftl10n-plugin" % "0.0.2")
 ```
 
 To check the code use `l10ncheck` command in sbt console.
