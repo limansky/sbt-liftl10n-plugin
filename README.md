@@ -18,7 +18,7 @@ Usage
 To use the plugin and following lines in the `project/plugins.scala`
 
 ```
-addSbtPlugin("su.eterra" % "sbt-liftl10n-plugin" % "0.0.2")
+addSbtPlugin("su.e-terra" % "sbt-liftl10n-plugin" % "0.0.2")
 ```
 
 To check the code use `l10ncheck` command in sbt console.
