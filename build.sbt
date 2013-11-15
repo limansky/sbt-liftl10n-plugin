@@ -14,6 +14,14 @@ licenses := Seq("BSD License" -> url("https://raw.github.com/limansky/sbt-liftl1
 
 homepage := Some(url("https://github.com/limansky/sbt-liftl10n-plugin"))
 
+scmInfo := Some(
+  ScmInfo(
+    url("https://github.com/limansky/sbt-liftl10n-plugin.git"),
+    "scm:git:https://github.com/limansky/sbt-liftl10n-plugin.git",
+    Some("scm:git:git@github.com:limansky/sbt-liftl10n-plugin.git")
+  )
+)
+
 publishMavenStyle := true
 
 publishArtifact in Test := false
@@ -27,11 +35,6 @@ publishTo := {
 }
 
 pomExtra := (
-  <url>https://github.com/limansky/sbt-liftl10n-plugin</url>
-  <scm>
-    <url>git@github.com:limansky/sbt-liftl10n-plugin.git</url>
-    <connection>scm:git:git@github.com:limansky/sbt-liftl10n-plugin.git</connection>
-  </scm>
   <developers>
     <developer>
       <id>limansky</id>
