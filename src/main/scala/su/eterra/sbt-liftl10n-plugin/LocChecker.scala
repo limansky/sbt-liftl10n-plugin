@@ -16,20 +16,19 @@ object LocChecker {
 
   def checkLoc(logger: Logger, path: File, locFormat: Option[Regex]) {
     var locs: TreeMap[String, List[LocItem]] = TreeMap.empty
-    processFiles(path, "\\.html$".r)(processFile("""(?iu)locid="([^"]+)"""".r)).foreach(it => {
+    processFiles(path / "src" / "main" / "webapp", "\\.html$".r)(processFile("""(?iu)locid="([^"]+)"""".r)).foreach(it => {
       val cur = locs.getOrElse(it.name, Nil)
       locs = locs + ((it.name, it :: cur))
     })
 
-    processFiles(path, "\\.scala$".r)(processFile("""S\.\?\??\("([^"]+)"\)""".r)).foreach(it => {
+    processFiles(path / "src" / "main" / "scala", "\\.scala$".r)(processFile("""S\.\?\??\("([^"]+)"\)""".r)).foreach(it => {
       val cur = locs.getOrElse(it.name, Nil)
       locs = locs + ((it.name, it :: cur))
     })
 
     val ress = new HashMap[String, Set[String]] with MultiMap[String, String]
-    val transPath = new File("src/main/webapp/resources-hidden")
     val allLangs = new HashSet[String]
-    processFiles(transPath, "^_resources_.*\\.html$".r)(processFile("""res name="([^"]+)"""".r)).foreach(it => {
+    processFiles(path / "src" / "main" / "webapp" / "resources-hidden", "^_resources_.*\\.html$".r)(processFile("""res name="([^"]+)"""".r)).foreach(it => {
       ress.addBinding(it.name, it.file)
       allLangs += it.file
     })

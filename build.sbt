@@ -6,9 +6,9 @@ name := "sbt-liftl10n-plugin"
 
 description := "SBT plugin to check Lift based projects localization"
 
-version := "0.0.2"
+version := "0.0.3-SNAPSHOT"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.10.4"
 
 licenses := Seq("BSD License" -> url("https://raw.github.com/limansky/sbt-liftl10n-plugin/master/LICENSE"))
 

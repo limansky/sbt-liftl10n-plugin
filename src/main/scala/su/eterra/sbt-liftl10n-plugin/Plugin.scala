@@ -17,7 +17,7 @@ object LiftL10n extends Plugin {
 
   val checkTask = checkKey <<= (streams, locIdFormat, baseDirectory) map { (s: TaskStreams, format: Option[Regex], path: File) =>
     val logger = s.log
-    logger.info("liftl10n 0.0.2")
+    logger.info("liftl10n 0.0.3-SNAPSHOT")
     logger.info("Format is " + format)
     logger.info("Path is " + path.getCanonicalPath)
     LocChecker.checkLoc(logger, path, format)
