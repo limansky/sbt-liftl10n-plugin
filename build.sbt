@@ -27,7 +27,7 @@ publishMavenStyle := true
 publishArtifact in Test := false
 
 publishTo := {
-  val nexus = "http://oss.sonatype.org/"
+  val nexus = "https://oss.sonatype.org/"
   if (version.value.trim.endsWith("SNAPSHOT"))
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
